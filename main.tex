@@ -59,7 +59,7 @@ And the relationship between error and residual is
 Remember whenever we read \textbf{residual}, think \textbf{“direction of steepest descent"}; whenever read \textbf{gradient} , think \textbf{“direction of steepest ascent"}.
 \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.3]{quadraticform.png}
+   \includegraphics[scale=0.3]{figure/quadraticform.png}
    \caption{(a) Quadratic form for a positive-definite matrix. (b) For a negative-definite matrix. (c) For a singular (and positive-indefinite) matrix. A line that runs through the bottom of the valley is the set of solutions. (d) For an indefinite matrix. Because the solution is a saddle point, Steepest Descent and CG will not work. In three dimensions or higher, a singular matrix can also have a saddle.}
    \label{fig:quadratic}
 \end{figure}
@@ -96,14 +96,14 @@ In summary, the whole process can be described below:
 
 \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.4]{steepest_descent.png}
+   \includegraphics[scale=0.4]{figure/steepest_descent.png}
    \caption{The method of Steepest Descent. (a) Starting at $[-2,-2]^T$, take a step in the direction of steepest descent of $f$. (b) Find the point on the intersection of these two surfaces that minimizes $f$. (c) This parabola is the intersection of surfaces. The bottom most point is our target. (d) The gradient at the bottom most point is orthogonal to the gradient of the previous step.}
    \label{fig:steepest}
 \end{figure}
 
 \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.3]{search_line.png}
+   \includegraphics[scale=0.3]{figure/search_line.png}
    \caption{The gradient $\nabla f$ is shown at several locations along the search line (solid arrows). Each gradient’s projection onto the line is also shown (dotted arrows). The gradient vectors represent the direction of steepest ascent of $f$, and the projections represent the rate of increase as one traverses the search line. On the search line, $f$ is minimized where the gradient is orthogonal to the search line.}
    \label{fig:searchline}
 \end{figure}
@@ -197,7 +197,7 @@ Then the problem comes to how to determine $p_k$, and we give the following expr
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.3]{Gram-Schmidt_conjuga}
+    \includegraphics[scale=0.3]{figure/Gram-Schmidt_conjuga}
     \caption{Gram-Schmidt conjugation of two vectors. Begin with two linearly independent vectors $u_0$ and
 $u_1$. Set $d_0=u_0$. The vector $u_1$ is composed of two components: $u^*$, which is conjugate to $d_0$ and $u^+$, which is parallel to $d_0$. After conjugation, only the $A$-orthogonal portion remains, and $d_1=u^*$. \textbf{If we stretch the space until the ellipses appeared circular, we'll find that $d_0$ and $d_1$ are strictly orthogonal.}}
     \label{fig:gram}
@@ -255,12 +255,12 @@ The key to making progress is to note that in general, the matrix $A$ is extreme
 Let's recap the idea of Eigen first: $Ax=\lambda x$. If $|\lambda|<1$, then $A^iv=\lambda^iv$ will vanish as $i$ approaches infinity. If $|\lambda|>1$, then $A^iv$ will grow into infinity as $i$ approaches infinity.
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.3]{zero.png}
+    \includegraphics[scale=0.3]{figure/zero.png}
     \caption{As $i$ increases, $A^iv$ converges to zero with $|\lambda|<1$.}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.3]{infinity.png}
+    \includegraphics[scale=0.3]{figure/infinity.png}
     \caption{As $i$ increases, $A^iv$ diverges to infinity with $|\lambda|>1$.}
 \end{figure}
 A very important skill in understanding linear algebra is to think of a vector as a sum of other vectors whose behavior is understood. Say a vector $x$ is illustrated as a sum of two eigenvectors $v_1, v_2$. Applying $A$ to $x$ is equivalent to applying $A$ to the eigenvectors, and summing the result. 
@@ -317,13 +317,13 @@ The entry-wise iteration can be written as:
 Figure 1 and 2 shows the convergence of the conjugate gradient methods with and without preconditioner, respectively. On small size Lena, the CG method without preconditioner takes 54 iterations for residual's norm to reach below 10, while the one with preconditioning takes 22 interations. On large size Lena, the CG method without preconditioner takes 112 iterations for residual's norm to reach below 50, while the one with preconditioning takes only 87 interations.
 \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.3]{convergence_lena.jpg}
+   \includegraphics[scale=0.3]{figure/convergence_lena.jpg}
    \caption{The convergence on small size Lena.}
 \end{figure}
 
 \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.3]{convergence_lenal.jpg}
+   \includegraphics[scale=0.3]{figure/convergence_lenal.jpg}
    \caption{The convergence on large size Lena.}
 \end{figure}
 
@@ -334,7 +334,7 @@ The $b$, $A$, $x_0$ here correspond to above $F$, $E$, $U$, respectively. And I 
 Figure 3 shows the result where $g(x,y)=x^2+y^2$. The progress takes 59 iterations in total.
 \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.8]{cg.jpg}
+   \includegraphics[scale=0.8]{figure/cg.jpg}
    \caption{From left to right: $G$, $U$, $F$.}
 \end{figure}
 
@@ -362,7 +362,7 @@ Below is my implementation of multigrid method. As a preconditioner, the multigr
 Figure 4 shows the result of multigrid precondtioned congjugate gradient methond.
 \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.8]{cgmg.jpg}
+   \includegraphics[scale=0.8]{figure/cgmg.jpg}
    \caption{From left to right: $G$, $U$, $F$.}
 \end{figure}
 

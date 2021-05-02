@@ -21,7 +21,7 @@
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 \setcounter{MaxMatrixCols}{20}
 
-\title{Solving Large Systems of Linear Equations}
+\title{Solving Large Systems of Linear Equations\thanks{Figure \ref{fig:quadratic},\ref{fig:gram},\ref{fig:searchline},\ref{fig:steepest},\ref{fig:infinity},\ref{fig:zero} credit to \url{https://www.cs.cmu.edu/~quake-papers/painless-conjugate-gradient.pdf}}}
 \author{Haocheng Dai }
 \date{}
 \DeclareUnicodeCharacter{2212}{-}
@@ -257,11 +257,13 @@ Let's recap the idea of Eigen first: $Ax=\lambda x$. If $|\lambda|<1$, then $A^i
     \centering
     \includegraphics[scale=0.3]{figure/zero.png}
     \caption{As $i$ increases, $A^iv$ converges to zero with $|\lambda|<1$.}
+    \label{fig:zero}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.3]{figure/infinity.png}
     \caption{As $i$ increases, $A^iv$ diverges to infinity with $|\lambda|>1$.}
+    \label{fig:infinity}
 \end{figure}
 A very important skill in understanding linear algebra is to think of a vector as a sum of other vectors whose behavior is understood. Say a vector $x$ is illustrated as a sum of two eigenvectors $v_1, v_2$. Applying $A$ to $x$ is equivalent to applying $A$ to the eigenvectors, and summing the result. 
 
